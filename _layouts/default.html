@@ -6,15 +6,31 @@
         {% seo %}
 
         <link rel="stylesheet" href="/assets/css/main.css">
-        <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,700' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css'>
         <link rel="icon" href="/assets/images/cardinal-logo.jpg" type="image/x-icon">
     </head>
     <body>
-        <main>
+        <header>
+            <img src="/assets/images/cardinal-logo.jpg" alt="Cardinal">
+            <h1>Lyon I LLC</h1>
+            <h2>Property Management</h2>
+            <!--<h3>Affordable off-campus college housing close to SUNY in Plattsburgh, NY.</h3>-->
+            <h4>New York State Realtor</h4>
+
             {% include navigation.html %}
+        </header>
+        <main>
             {{ content }}
+            <section class="aside">
+                <p>Lyon I LLC offers student apartments that are located near SUNY in Plattsburgh, NY.</p>
+                <p>We rent on a semester schedule. Please check in with us, as apartments become available after each semester.</p>
+                <p>Download our <a href="#">sample lease</a> or contact property manager Derek Mercury at (518) 569-9229.</p>
+            </section>
+
+
         </main>
+        <section class="google-map">
+        </section>
         <footer>
             <h5>Content Copyright © Lyon I LLC Property Management, 2018</h5>
             <p>Web development by <a href="#">Cassidy Brooke</a></p>

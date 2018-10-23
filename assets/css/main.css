@@ -1,32 +1,68 @@
 
 body {
+    font-family: 'Crimson Text', serif;
     background: #F2F0EC;
     margin: 0;
     padding: 0;
+    font-size: 120%;
 }
 
-main {
+header, main {
     background: #fff;
     width: 80%;
     margin: 0 auto;
     padding: 1em;
 }
 
-@media screen and (max-width: 600px) {
-    main {
-        width: 90%;
-    }
+header img {
+    float: left;
+    margin: 0 1em 4em 0;
+}
+
+header h1, h2, h3, h4 {
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+}
+
+header h1 {
+    line-height: 1;
 }
 
 .row {
     display: flex;
+    margin: 3em 2em;
 }
 
 .column {
     flex: 50%;
 }
 
+.column h2 {
+    margin-bottom: .5em;
+}
+
+.column img {
+    height: 225px;
+    width: 300px;
+}
+
+.aside {
+    margin-top: 200px;
+    text-align: center;
+}
+
+a, a:active, a:visited {
+    color: #A50101;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 nav {
+    font-weight: 400;
 }
 
 nav ul {
@@ -37,23 +73,54 @@ nav ul li {
     list-style: none;
     display: inline;
     text-align: right;
+    margin: 0px;
 }
 
 nav ul li a {
-    text-decoration: none;
+    background: #A50101;
+    color: #fff !important;
+    padding: .5em;
+    text-decoration: none !important;
 }
 
-footer {
-    text-align: center;
-    background: #333;
-    color: #ffffff;
+nav ul li a:hover {
+    background: #5bc0de;
+    color: #fff !important;
+    text-decoration: none !important;
+}
+
+.apartment-list {
+    margin: 0;
+    padding: 0;
+}
+
+.apartment-list li {
+    list-style: none;
+    border-bottom: 1px solid #F2F0EC;
+    padding: .25em;
+}
+
+.google-map {
+    height: 300px;
     width: 80%;
     margin: 0 auto;
+    background: #A50101;
     padding: 1em;
 }
 
+footer {
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    background: #333;
+    width: 80%;
+    color: #ffffff;
+    margin: 0 auto;
+    padding: 1em;
+    text-align: center;
+}
+
 footer h1, h2, h3, h4, h5 {
-    font-weight: 500;
+    font-weight: 400;
+    line-height: 1;
 }
 
 footer p {
@@ -62,5 +129,22 @@ footer p {
 
 footer a, footer a:hover, footer a:active, footer a:visited {
     color: #5bc0de;
-    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 600px) {
+    header, main, footer, .google-map {
+        width: 90%;
+    }
+    .row {
+        margin: 2em 0;
+    }
 }

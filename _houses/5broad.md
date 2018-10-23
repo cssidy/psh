@@ -1,6 +1,8 @@
 ---
 layout: house
 address: 5 Broad Street
+house: 5broad
+image: /assets/images/5broad/exterior.jpg
 ---
 A banana is an edible fruit – botanically a berry – produced by several kinds
 of large herbaceous flowering plants in the genus Musa.
