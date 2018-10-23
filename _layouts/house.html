@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<h1>{{ page.address }}</h1>
+
+{{ content }}
+
+<h2>Apartments</h2>
+<ul>
+    {% assign filtered_apartments = site.apartments | where: 'house', apartment.house %}
+
+    {% for apartment in filtered_apartments %}
+    <li><a href="{{ apartment.url }}">{{ apartment.address }}</a></li>
+    {% endfor %}
+</ul>

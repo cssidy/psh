@@ -1,0 +1,8 @@
+
+{% for apartment in site.apartments %}
+    {% if apartment.house == include.type %}
+    <p><a href="{{ apartment.url }}">{{ apartment.address }}</a></p>
+    {% endif %}
+{% endfor %}
+
+

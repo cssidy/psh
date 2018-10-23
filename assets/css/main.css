@@ -1,4 +1,66 @@
 
 body {
-    background: pink;
+    background: #F2F0EC;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    background: #fff;
+    width: 80%;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+@media screen and (max-width: 600px) {
+    main {
+        width: 90%;
+    }
+}
+
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 50%;
+}
+
+nav {
+}
+
+nav ul {
+    text-align: right;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline;
+    text-align: right;
+}
+
+nav ul li a {
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    background: #333;
+    color: #ffffff;
+    width: 80%;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+footer h1, h2, h3, h4, h5 {
+    font-weight: 500;
+}
+
+footer p {
+    font-size: 12px;
+}
+
+footer a, footer a:hover, footer a:active, footer a:visited {
+    color: #5bc0de;
+    text-decoration: none;
 }

@@ -1,6 +1,10 @@
 collections:
   authors:
     output: true
+  houses:
+    output: true
+  apartments:
+    output: true
 
 defaults:
   - scope:
@@ -8,6 +12,16 @@ defaults:
       type: "authors"
     values:
       layout: "author"
+  - scope:
+      path: ""
+      type: "houses"
+    values:
+      layout: "house"
+  - scope:
+      path: ""
+      type: "apartments"
+    values:
+      layout: "apartment"
   - scope:
       path: ""
       type: "posts"

@@ -3,7 +3,42 @@ layout: default
 title: Home
 ---
 
-<main>
-    <h1>{{ "Hello World!" | upcase }}</h1>
-</main>
+<h1>Lyon I LLC</h1>
+<h2>Property Management</h2>
+<h3>Affordable off-campus college housing close to SUNY in Plattsburgh, NY.</h3>
+<h4>New York State Realtor</h4>
+
+
+
+<section>
+
+    {% for house in site.houses %}
+
+    <div class="row">
+        <div class="column">
+            <img src="{{ house.image | prepend: site.baseurl }}" alt="{{ house.address }}" title="{{ post.address }}" height="50px" width="50px">
+        </div>
+        <div class="column">
+            <h2><a href="{{ house.url }}">{{ house.address }}</a></h2>
+
+            {% include apartment_list.html type=house.house %}
+        </div>
+    </div>
+
+    {% endfor %}
+
+</section>
+
+<section>
+    <p>Lyon I LLC offers student apartments that are located near SUNY in Plattsburgh, NY.</p>
+
+    <p>We rent on a semester schedule. Please check in with us, as apartments become available after each semester.</p>
+
+    <p>Download our sample lease or contact property manager Derek Mercury at (518) 569-9229.</p>
+</section>
+
+
+
+
+
 
