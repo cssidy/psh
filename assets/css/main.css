@@ -204,6 +204,9 @@ footer a, footer a:hover, footer a:active, footer a:visited {
         margin: 1em 0 0 0;
         text-align: center;
     }
+    nav ul li {
+        margin-bottom: .1em;
+    }
 }
 
 @media screen and (min-width: 656px) {
