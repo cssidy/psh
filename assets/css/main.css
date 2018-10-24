@@ -102,48 +102,33 @@ a:hover {
 }
 
 nav {
-    font-size: 16px;
-    font-weight: 400;
-    margin-right: -32px;
-    margin-top: 40px;
+    margin-top: 80px;
 }
 
 nav ul {
-    text-align: right;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li {
-    list-style: none;
-    display: inline;
-    text-align: left;
-    width: 200px;
-    padding: 1em;
-    margin: .1em;
     background: #A50101;
-    color: #fff !important;
-}
-
-nav ul li a {
-    text-decoration: none !important;
-}
-
-nav ul li {
+    color: #fff;
     list-style: none;
-    display: inline;
-    text-align: right;
-    margin: 1em 0;
-}
-
-nav ul li a {
-    color: #fff !important;
-    padding: .5em 1.5em;
-    text-decoration: none !important;
+    padding: .5em;
 }
 
 nav ul li:hover {
     background: #5bc0de;
+    color: #fff;
+}
+
+nav ul li a {
     color: #fff !important;
-    text-decoration: none !important;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: none;
 }
 
 .listings, .apartments {
@@ -191,36 +176,16 @@ footer a, footer a:hover, footer a:active, footer a:visited {
 }
 
 @media screen and (max-width: 650px) {
-    main {
+    main, header, .google-map, footer {
         padding: .5em;
     }
     header img {
-        float: left;
+        float: none;
         margin: 0;
         padding: 0;
     }
     .row {
         margin: 2em 0;
-    }
-    nav {
-        font-size: 16px;
-        padding: 0;
-    }
-    nav ul {
-        text-align: left;
-    }
-    nav ul li {
-        list-style: none;
-        display: block;
-        text-align: center;
-        padding: 1em;
-        margin: .1em;
-        width: 100%;
-        background: #A50101;
-        color: #fff !important;
-    }
-    nav ul li a {
-        text-decoration: none !important;
     }
     .column img {
         max-height: 225px;
@@ -234,5 +199,21 @@ footer a, footer a:hover, footer a:active, footer a:visited {
     }
     .listings ul li {
         font-size: 12px;
+    }
+    nav {
+        margin: 1em 0 0 0;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 656px) {
+    nav {
+        text-align: right;
+        margin-right: -32px;
+    }
+    nav ul li {
+        display: inline;
+        padding: .75em 1em;
+        font-size: 16px;
     }
 }
