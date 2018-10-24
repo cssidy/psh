@@ -187,7 +187,7 @@ footer a, footer a:hover, footer a:active, footer a:visited {
         padding: 0;
     }
     .listings ul li, .apartments ul li {
-        font-size: 12px;
+        font-size: 12px !important;
     }
     nav {
         margin: 1em 0 0 0;
