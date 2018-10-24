@@ -174,7 +174,6 @@ footer a, footer a:hover, footer a:active, footer a:visited {
         flex-wrap: wrap;
     }
     .column {
-        flex: none;
     }
     .column img {
         max-height: 225px;
@@ -195,6 +194,9 @@ footer a, footer a:hover, footer a:active, footer a:visited {
     }
     nav ul li {
         margin-bottom: .1em;
+    }
+    p {
+
     }
 }
 
