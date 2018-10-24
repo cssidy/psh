@@ -26,7 +26,6 @@ header img {
 header h1, header h2, header h3, header h4 {
     margin: 0;
     font-weight: 500;
-    line-height: 1;
 }
 
 header h1 {
@@ -35,12 +34,7 @@ header h1 {
     padding: 1em 0 .25em 0;
 }
 
-header h2 {
-    font-size: 20px;
-}
-
 h2 {
-    font-size: 30px;
     font-weight: 500;
 }
 
