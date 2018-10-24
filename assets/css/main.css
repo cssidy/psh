@@ -87,7 +87,6 @@ a:hover {
 }
 
 nav {
-    margin-top: 80px;
 }
 
 nav ul {
@@ -169,6 +168,9 @@ footer a, footer a:hover, footer a:active, footer a:visited {
         margin: 0;
         padding: 0;
     }
+    header {
+        text-align: center;
+    }
     .row {
         margin: 2em 0;
         flex-wrap: wrap;
@@ -192,6 +194,7 @@ footer a, footer a:hover, footer a:active, footer a:visited {
     nav {
         margin: 1em 0 0 0;
         text-align: center;
+        padding-bottom: 2em;
     }
     nav ul li {
         margin-bottom: .1em;
