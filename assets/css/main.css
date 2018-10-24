@@ -186,8 +186,8 @@ footer a, footer a:hover, footer a:active, footer a:visited {
     .index-spacer {
         padding: 0;
     }
-    .listings ul li, .apartments ul li {
-        font-size: 12px !important;
+    .listings li a, .apartments li a {
+        font-size: 16px !important;
     }
     nav {
         margin: 1em 0 0 0;
