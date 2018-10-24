@@ -4,14 +4,19 @@ body {
     background: #F2F0EC;
     margin: 0;
     padding: 0;
-    font-size: 120%;
+    line-height: 1.2;
+    overflow-x: hidden;
 }
 
-header, main {
-    background: #fff;
-    width: 80%;
+.container {
+    box-shadow: 0 0 10px #C7C5C2;
+    max-width: 1290px;
     margin: 0 auto;
-    padding: 1em;
+}
+
+header, main, .google-map, footer {
+    background: #fff;
+    padding: 2em;
 }
 
 header img {
@@ -19,41 +24,74 @@ header img {
     margin: 0 1em 4em 0;
 }
 
-header h1, h2, h3, h4 {
+header h1, header h2, header h3, header h4 {
     margin: 0;
-    padding: 0;
     font-weight: 500;
+    line-height: 1;
 }
 
 header h1 {
-    line-height: 1;
+    color: #A50101;
+    font-weight: 700;
+    padding: 1em 0 .25em 0;
+}
+
+header h2 {
+    font-size: 20px;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: 500;
 }
 
 .row {
     display: flex;
-    margin: 3em 2em;
+    width: 100%;
+}
+
+.row-spacer {
+    margin: 3em 0;
 }
 
 .column {
     flex: 50%;
 }
 
-.column h2 {
-    margin-bottom: .5em;
+.column-spacer {
+    padding: 0 3em 2em 3em;
 }
 
-.column img {
+.index-spacer {
+    padding: 0 3em;
+}
+
+.column h2 {
+    margin: 0;
+    padding-bottom: .5em;
+}
+
+.column img, .image-gallery img {
     height: 225px;
     width: 300px;
 }
 
+.floorplan-gallery {
+    text-align: right;
+}
+
+.floorplan-gallery img {
+    height: 112.5px;
+    width: 150px;
+}
+
 .aside {
-    margin-top: 200px;
+    margin: 150px 0 50px 0;
     text-align: center;
 }
 
 a, a:active, a:visited {
-    color: #A50101;
+    color: #337ab7;
     text-decoration: none;
 }
 
@@ -63,6 +101,8 @@ a:hover {
 
 nav {
     font-weight: 400;
+    margin-right: -32px;
+    margin-top: 40px;
 }
 
 nav ul {
@@ -73,13 +113,13 @@ nav ul li {
     list-style: none;
     display: inline;
     text-align: right;
-    margin: 0px;
+    margin: 1em 0;
 }
 
 nav ul li a {
     background: #A50101;
     color: #fff !important;
-    padding: .5em;
+    padding: .5em 1.5em;
     text-decoration: none !important;
 }
 
@@ -89,12 +129,17 @@ nav ul li a:hover {
     text-decoration: none !important;
 }
 
-.apartment-list {
+.listings, .apartments {
     margin: 0;
     padding: 0;
 }
 
-.apartment-list li {
+.listings li {
+    list-style: none;
+    padding: .25em;
+}
+
+.apartments li {
     list-style: none;
     border-bottom: 1px solid #F2F0EC;
     padding: .25em;
@@ -102,49 +147,42 @@ nav ul li a:hover {
 
 .google-map {
     height: 300px;
-    width: 80%;
     margin: 0 auto;
     background: #A50101;
     padding: 1em;
 }
 
 footer {
-    font-family: "Helvetica Neue", Helvetica, sans-serif;
     background: #333;
-    width: 80%;
     color: #ffffff;
     margin: 0 auto;
     padding: 1em;
     text-align: center;
 }
 
-footer h1, h2, h3, h4, h5 {
-    font-weight: 400;
-    line-height: 1;
-}
-
 footer p {
     font-size: 12px;
+}
+
+footer h1, footer h2, footer h3, footer h4, footer h5 {
+    font-weight: 400;
+    font-size: 14px;
 }
 
 footer a, footer a:hover, footer a:active, footer a:visited {
     color: #5bc0de;
 }
 
-
-
-
-
-
-
-
-
-
-@media screen and (max-width: 600px) {
-    header, main, footer, .google-map {
-        width: 90%;
-    }
+@media screen and (max-width: 650px) {
     .row {
         margin: 2em 0;
+    }
+    nav {
+        font-size: 12px;
+        margin-top: 100px;
+        width: 100%;
+    }
+    .column-spacer {
+        padding: 0;
     }
 }

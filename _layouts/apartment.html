@@ -1,20 +1,63 @@
 ---
 layout: default
 ---
-<h1>{{ page.address }}</h1>
-<p>{{ page.house }} {{ page.apartment }}</p>
-
-<p>hellooooo</p>
 
 
-{% capture filename %}images/{{ page.house }}/{{ page.apartment }}{% endcapture %}
-
-{% for image in site.static_files %}
-    {% if image.path contains filename %}
-
-    <img src="{{ site.baseurl }}{{ image.path }}" alt="{{ page.address }}" width="50px" height="50px" />
-    {% endif %}
-{% endfor %}
 
 
-{{ content }}
+
+
+<div class="row">
+    <div class="column column-spacer">
+        <h2>{{ page.address }}</h2>
+        {{ content }}
+
+        <p>Lease: Start of fall semester until end of spring semester</p>
+        <p>Maximum tenants: {{ page.max_tenants }}</p>
+        <p>Rent: {{ page.rent }} per semester</p>
+        <p>Security deposit: {{ page.security_deposit }}</p>
+        <p>Security deposit with pets: {{ page.security_deposit_pets }}</p>
+        <p>Parking spaces: {{ page.parking_spaces }}</p>
+        <p>Furnished: {{ page.furnished | capitalize }}</p>
+    </div>
+    <div class="column column-spacer">
+        <div class="floorplan-gallery">
+            {% capture filename %}images/floorplans/{{ page.apartment }}{% endcapture %}
+
+
+            <h2>Floorplans</h2>
+
+
+            {% for image in site.static_files %}
+                {% if image.path contains filename %}
+                    <p>Click to view larger</p>
+                    <a href="{{ site.baseurl }}{{ image.path }}"><img src="{{ site.baseurl }}{{ image.path }}" alt="Plattsburgh Student Housing Lyon I LLC Off-Campus College Apartments" /></a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+
+<section class="image-gallery">
+    {% capture filename %}images/{{ page.house }}/{{ page.apartment }}{% endcapture %}
+
+    {% for image in site.static_files %}
+        {% if image.path contains filename %}
+        <img src="{{ site.baseurl }}{{ image.path }}" alt="{{ page.address }}" />
+        {% endif %}
+    {% endfor %}
+
+    {% capture filename %}images/{{ page.house }}/house{% endcapture %}
+
+    {% for image in site.static_files %}
+        {% if image.path contains filename %}
+
+        <img src="{{ site.baseurl }}{{ image.path }}" alt="{{ page.address }}" />
+        {% endif %}
+    {% endfor %}
+</section>
+
+
+

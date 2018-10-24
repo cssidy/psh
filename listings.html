@@ -2,14 +2,16 @@
 layout: default
 title: Listings
 ---
-<h1>Complete Apartment List</h1>
 
-<section>
+
+<section class="column-spacer">
+    <h2>Complete Apartment List</h2>
     {% for house in site.houses %}
-
-        <h2><a href="{{ house.url }}">{{ house.address }}</a></h2>
-
-        {% include apartment_list.html type=house.house %}
+        <div class="row row-spacer">
+            <div class="column">
+                {% include listings.html type=house.house %}
+            </div>
+        </div>
 
     {% endfor %}
 </section>

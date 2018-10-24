@@ -1,0 +1,9 @@
+
+<ul class="listings">
+{% for apartment in site.apartments %}
+    {% if apartment.house == include.type %}
+    <li><a href="{{ apartment.url }}">{{ apartment.address }} - {{ apartment.rooms }} - {{ apartment.rent | remove: '.00' }}</a></li>
+    {% endif %}
+{% endfor %}
+</ul>
+

@@ -1,23 +1,21 @@
 ---
 layout: default
-title: Home
+title: Plattsburgh Student Housing - Affordable college housing near SUNY Plattsburgh, Upstate New York
 ---
 
 
-<section style="height: 200px; background: #A50101; padding: 0; margin: 0; width: 100%;"></section>
-
-<section>
+<section class="index-spacer">
 
     {% for house in site.houses %}
 
-    <div class="row">
+    <div class="row row-spacer">
 
         <div class="column">
             <h2>{{ house.address }}</h2>
             <img src="{{ house.image | prepend: site.baseurl }}" alt="{{ house.address }}" title="{{ post.address }}">
         </div>
         <div class="column">
-            {% include apartment_list.html type=house.house %}
+            {% include apartments.html type=house.house %}
         </div>
     </div>
 
