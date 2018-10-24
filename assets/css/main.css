@@ -47,6 +47,8 @@ h2 {
 
 .row {
     display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
     width: 100%;
 }
 
