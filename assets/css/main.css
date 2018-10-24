@@ -4,7 +4,6 @@ body {
     background: #F2F0EC;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
 }
 
 .container {
@@ -40,8 +39,6 @@ h2 {
 
 .row {
     display: flex;
-    flex-flow: row;
-    flex-wrap: wrap;
 }
 
 .row-spacer {
@@ -68,10 +65,6 @@ h2 {
 .column img, .image-gallery img {
     height: 225px;
     width: 300px;
-}
-
-.floorplan-gallery {
-    text-align: right;
 }
 
 .floorplan-gallery img {
@@ -178,7 +171,7 @@ footer a, footer a:hover, footer a:active, footer a:visited {
     }
     .row {
         margin: 2em 0;
-        flex: none;
+        flex-wrap: wrap;
     }
     .column {
         flex: none;

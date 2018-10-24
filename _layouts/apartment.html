@@ -10,6 +10,7 @@ layout: default
 <div class="row">
     <div class="column column-spacer">
         <h2>{{ page.address }}</h2>
+
         {{ content }}
 
         <p>Lease: Start of fall semester until end of spring semester</p>
@@ -26,11 +27,11 @@ layout: default
 
 
             <h2>Floorplans</h2>
-
+            <p>Click to view larger</p>
 
             {% for image in site.static_files %}
                 {% if image.path contains filename %}
-                    <p>Click to view larger</p>
+
                     <a href="{{ site.baseurl }}{{ image.path }}"><img src="{{ site.baseurl }}{{ image.path }}" alt="Plattsburgh Student Housing Lyon I LLC Off-Campus College Apartments" /></a>
                 {% endif %}
             {% endfor %}
