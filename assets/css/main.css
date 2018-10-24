@@ -200,7 +200,7 @@ footer a, footer a:hover, footer a:active, footer a:visited {
     .index-spacer {
         padding: 0;
     }
-    .listings ul li {
+    .listings ul li, .apartments ul li {
         font-size: 12px;
     }
     nav {
