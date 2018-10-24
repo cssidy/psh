@@ -173,7 +173,8 @@ footer a, footer a:hover, footer a:active, footer a:visited {
         margin: 2em 0;
         flex-wrap: wrap;
     }
-    .column {
+    .index-spacer .column {
+        flex: none !important;
     }
     .column img {
         max-height: 225px;
@@ -195,9 +196,7 @@ footer a, footer a:hover, footer a:active, footer a:visited {
     nav ul li {
         margin-bottom: .1em;
     }
-    p {
 
-    }
 }
 
 @media screen and (min-width: 656px) {
