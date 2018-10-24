@@ -49,7 +49,6 @@ h2 {
     display: flex;
     flex-flow: row;
     flex-wrap: wrap;
-    width: 100%;
 }
 
 .row-spacer {
@@ -186,6 +185,10 @@ footer a, footer a:hover, footer a:active, footer a:visited {
     }
     .row {
         margin: 2em 0;
+        -webkit-flex-basis: 100%;
+    }
+    .column {
+        flex: 100%;
     }
     .column img {
         max-height: 225px;
