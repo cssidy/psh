@@ -1,4 +1,3 @@
-
 body {
     font-family: 'Crimson Text', serif;
     background: #F2F0EC;
@@ -134,8 +133,12 @@ nav ul li a:hover {
 .google-map {
     height: 300px;
     margin: 0 auto;
-    background: #A50101;
-    padding: 1em;
+    background: #e0e0e0;
+    padding: 0;
+}
+
+#map {
+  height: 300px;
 }
 
 footer {

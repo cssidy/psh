@@ -19,47 +19,81 @@
     </head>
     <body>
         <section class="container">
-        <header>
+          <header>
 
-            {% include navigation.html %}
+              {% include navigation.html %}
 
-            <img src="/assets/images/cardinal-logo.jpg" alt="Cardinal">
-            <h1>Lyon I LLC Property Management</h1>
-            <h2>Affordable off-campus college housing close to SUNY in Plattsburgh, NY.</h2>
-            <h3>New York State Realtor</h3>
-
-
-        </header>
-        <main>
-            {{ content }}
-            <section class="aside">
-                <img src="/assets/images/cardinal-logo.jpg" alt="Cardinal">
-
-                <h2>Showings</h2>
-                <h3>Contact leasing agent Andrew Castine to see an apartment.</h3>
-                <h3><a href="tel:+15185784023">Call: (518) 578-4023</a></h3>
-                <h3><a href="mailto:castineproperties@gmail.com">Email: castineproperties@gmail.com</a></h3>
-
-                <br>
-
-                <p>Lyon I LLC offers student apartments that are located near SUNY in Plattsburgh, NY.</p>
-                <p>We rent on a semester schedule. Please check in with us, as apartments become available after each semester.</p>
-                <p>Download our <a href="/assets/docs/lease2016.pdf">sample lease</a> to arrive at your showing prepared.</p>
-            </section>
+              <img src="/assets/images/cardinal-logo.jpg" alt="Cardinal">
+              <h1>Lyon I LLC Property Management</h1>
+              <h2>Affordable off-campus college housing close to SUNY in Plattsburgh, NY.</h2>
+              <h3>New York State Realtor</h3>
 
 
-        </main>
-        <section class="google-map">
-        </section>
-        <footer>
-            <h4>Lyon I LLC | Property manager Derek Mercury | (518) 569-9229</h4>
-            <h4></h4>
+          </header>
+          <main>
+              {{ content }}
+              <section class="aside">
+                  <img src="/assets/images/cardinal-logo.jpg" alt="Cardinal">
 
-            <p>Web development by <a href="https://cassidybrooke.net">Cassidy Brooke</a>
-                <br>
-                Content copyright © 2018
-            </p>
-        </footer>
+                  <h2>Showings</h2>
+                  <h3>Contact leasing agent Andrew Castine to see an apartment.</h3>
+                  <h3><a href="tel:+15185784023">Call: (518) 578-4023</a></h3>
+                  <h3><a href="mailto:castineproperties@gmail.com">Email: castineproperties@gmail.com</a></h3>
+
+                  <br>
+
+                  <p>Lyon I LLC offers student apartments that are located near SUNY in Plattsburgh, NY.</p>
+                  <p>We rent on a semester schedule. Please check in with us, as apartments become available after each semester.</p>
+                  <p>Download our <a href="/assets/docs/lease2016.pdf">sample lease</a> to arrive at your showing prepared.</p>
+              </section>
+
+
+          </main>
+          <section class="google-map">
+
+            <div id="map"></div>
+
+            <script>
+              var map;
+              function initMap() {
+                // Constructor creates a new map - only center and zoom are required.
+                map = new google.maps.Map(document.getElementById('map'), {
+                  center: {lat: 44.6928, lng: -73.4556},
+                  zoom: 8
+                });
+
+                var markers = locations.map(function(location, i) {
+                  return new google.maps.Marker({
+                    position: location,
+                    label: labels[i % labels.length]
+                  });
+                });
+
+                var locations = [
+                  {lat: 44.6952099, lng: -73.4530751}, // 5 Broad
+                  {lat: 44.697785,  lng: -73.4641671}, // 21 Wells
+                  {lat: 44.6963686, lng: -73.4616374}, // 101/103 Brinkerhoff
+                  {lat: 44.694664,  lng: -73.4623154}, // 72 Broad
+                  {lat: 44.6963518, lng: -73.4618522}  // 97/99 Brinkerhoff
+                ]
+              }
+            </script>
+
+            <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHLX2cP7V3HCIjzeN8Kfms3mMTaZzLx6A&v=3&callback=initMap">
+            </script>
+
+
+          </section>
+          <footer>
+              <h3>Lyon I LLC</h3>
+              <h4>Property manager Derek Mercury | (518) 569-9229</h4>
+
+              <p>Web development by <a href="https://cassidybrooke.net">Cassidy Brooke</a>
+                  <br>
+                  Content copyright © 2019
+              </p>
+          </footer>
         </section>
     </body>
 </html>
