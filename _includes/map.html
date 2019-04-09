@@ -1,1 +1,31 @@
 
+<div id="map"></div>
+
+<script>
+  var map;
+  function initMap() {
+    // Constructor creates a new map - only center and zoom are required.
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: 44.6928, lng: -73.4556},
+      zoom: 8
+    });
+
+    var markers = locations.map(function(location, i) {
+      return new google.maps.Marker({
+        position: location
+      });
+    });
+
+    var locations = [
+      {lat: 44.6952099, lng: -73.4530751}, // 5 Broad
+      {lat: 44.697785,  lng: -73.4641671}, // 21 Wells
+      {lat: 44.6963686, lng: -73.4616374}, // 101/103 Brinkerhoff
+      {lat: 44.694664,  lng: -73.4623154}, // 72 Broad
+      {lat: 44.6963518, lng: -73.4618522}  // 97/99 Brinkerhoff
+    ]
+  }
+</script>
+
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHLX2cP7V3HCIjzeN8Kfms3mMTaZzLx6A&v=3&callback=initMap">
+</script>
