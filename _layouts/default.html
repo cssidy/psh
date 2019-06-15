@@ -2,10 +2,22 @@
 <html>
 <head>
     <meta charset='utf-8' />
-    <title>Fly to a location based on scroll position</title>
+    <title>Plattsburgh Student Housing | Affordable Apartments | SUNY</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <meta name="description" content="Affordable college apartments near SUNY Plattsburgh, New York" />
+    <meta name="keywords" content="housing, college, campus, senior, junior, off-campus, apartments, apartment, units, unit, campus, 1, 2, bedroom, bed, room, rooms, SUNY, platt, plattsburgh, ny, nyc, new york, new, york, up, state, upstate,
+    rentals, rental, lease, affordable, cheap, inexpensive, budget, price, cost">
+    <meta name="author" content="Lyon I LLC">
+    <meta property="og:image" content="/assets/images/72broad/exterior.jpg" />
+    <meta property="og:title" content="Plattsburgh Student Housing" />
+    <meta property="og:description" content="Affordable college apartments near SUNY Plattsburgh, New York" />
+
+
+
+
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css' rel='stylesheet' />
+    <link href="https://fonts.googleapis.com/css?family=Raleway:900|Roboto:300,400,400i&display=swap" rel="stylesheet">
     <style>
         body { margin:0; padding:0; }
         #map { position:absolute; top:0; bottom:0; width:100%; }
@@ -13,34 +25,158 @@
 </head>
 <body>
 
-
 <style>
-#map {
-    position: fixed;
-    width:50%;
-}
-#features {
-    width: 50%;
-    margin-left: 50%;
-    font-family: sans-serif;
-    overflow-y: scroll;
-    background-color: #fafafa;
-}
-section {
-    padding:  25px 50px;
-    line-height: 25px;
-    border-bottom: 1px solid #ddd;
-    opacity: 0.25;
-    font-size: 13px;
-}
-section.active {
-    opacity: 1;
-}
-section:last-child {
-    border-bottom: none;
-    margin-bottom: 200px;
-}
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    #map {
+        position: fixed;
+        width:50%;
+        right: 0;
+    }
+    #features {
+        width: 50%;
+        margin-right: 50%;
+        font-family: sans-serif;
+        overflow-y: scroll;
+        background-color: #fafafa;
+    }
+    section {
+        padding:  50px;
+        line-height: 25px;
+        border-bottom: 1px solid #ddd;
+        opacity: 0.25;
+        font-size: 13px;
+    }
+    section.active {
+        opacity: 1;
+    }
+    section:last-child {
+        border-bottom: none;
+        margin-bottom: 200px;
+    }
+    h1, h2, h3 {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 900;
+      letter-spacing: .1rem;
+    }
+    a {
+      color: #A50101;
+      text-decoration: none;
+    }
+    nav {
+      height: 35px;
+      position: relative;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      width: 100%;
+      z-index: 10;
+      display: flex;
+      padding: 1rem 0 .25rem 1rem;
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+    nav ul {
+      margin: 0;
+    }
+    nav ul li {
+      display: inline-block;
+      padding: 0 1rem;
+    }
+    .logo {
+      background-color: #A50101;
+      height: 100px;
+      width: 200px;
+      margin-top: -1rem;
+      z-index: 11;
+      order: 1;
+      color: #fff;
+      border-bottom-right-radius: 3.5rem;
+    }
+    .logo h1 {
+      margin: 0;
+      font-size: 3.75rem;
+      letter-spacing: .25rem;
+      padding: .5rem .5rem 0 .75rem;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 900;
+      line-height: 3.75rem;
+    }
+    .logo h2 {
+      margin: 0;
+      font-size: 1.1rem;
+      padding: 0 0 .5rem 0;
+      line-height: 1.1rem;
+      font-weight: 300;
+      text-align: center;
+    }
+    .primary-nav {
+      order: 2;
+      padding: 0 0 0 1rem;
+    }
+    .primary-nav li a {
+      text-decoration: none;
+      color: #A50101;
+      font-weight: 400;
+      font-size: .875rem;
+    }
+    .primary-nav li a:hover {
+      border-bottom: 2px solid #A50101;
+      padding-bottom: 1rem;
+      color: #6A0101;
+    }
+    .secondary-nav {
+      order: 3;
+      align-items: flex-end;
+      text-align: right;
+      padding: 0 1rem;
+    }
+    .secondary-nav li {
+      font-weight: 300;
+      background: #A50101;
+      height: 33px;
+      padding: 1.1rem 1rem .25rem 1rem;
+      margin-top: -1.5rem;
+    }
+    .secondary-nav li a {
+      text-decoration: none;
+      color: #fff;
+    }
+    .secondary-nav li span {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 900;
+      letter-spacing: .1rem;
+    }
+    footer p:nth-of-type(2){
+      padding: 5rem 0 0 0;
+    }
+    footer a {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 900;
+      font-size: 17px;
+      letter-spacing: .1rem;
+    }
+    footer img {
+      height: 17px;
+      width: 17px;
+      margin: 10px 10px 0 0;
+    }
 </style>
+
+<nav>
+  <div class="logo">
+    <h1>LYON</h1>
+    <h2>APARTMENTS</h2>
+  </div>
+  <ul class="primary-nav">
+    <li><a href="">ABOUT</a></li>
+    <li><a href="#">LISTINGS</a></li>
+    <li><a href="">SAMPLE LEASE</a></li>
+  </ul>
+  <ul class="secondary-nav">
+    <li><a href="tel:+15185784023"><span>SHOWINGS:</span> (518) 578-4023</a></li>
+  </ul>
+</nav>
 
 <div id='map'></div>
 <div id='features'>
@@ -83,11 +219,28 @@ section:last-child {
         <h3>Charing Cross Hotel</h3>
         <img class="res-img" src="https://loremflickr.com/550/400" alt="">
         <p>Walter writes to Oberstein and convinces him to meet in the smoking room of the Charing Cross Hotel where he promises additional plans for the submarine in exchange for money. The plan works and Holmes and Watson catch both criminals.</p>
-        <small id="citation">
-            Adapted from <a href='http://www.gutenberg.org/files/2346/2346-h/2346-h.htm'>Project Gutenberg</a>
-        </small>
     </section>
 </div>
+<div>
+  <section class="active">
+    <footer>
+        <h2>SHOWINGS</h2>
+        <p>Contact leasing agent Andrew Castine to see an apartment.</p>
+        <img src="/assets/images/phone.png" alt="phone icon"><a href="tel:+15185784023">PHONE: (518) 578-4023</a><br>
+        <img src="/assets/images/email.png" alt="email icon"><a href="mailto:castineproperties@gmail.com">EMAIL: castineproperties@gmail.com</a>
+
+        <p>
+          LYON I LLC<br>
+          PROPERTY MANAGER Derek Mercury (518) 569-9229<br>
+          Web development by <a style="font-size: .875rem;" href="https://cassidybrooke.net">Cassidy Brooke</a><br>
+          Content copyright © 2019
+        </p>
+    </footer>
+  </section>
+</div>
+
+
+
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoiY2Fzc2lkeWIiLCJhIjoiY2p3dmMzMGRsMDZobzN6bGYxMHcyNnhlaSJ9.fw89Um7NVTMMXEL_DJmI-w';
 
@@ -152,6 +305,8 @@ var chapters = {
     }
 };
 
+
+
 // On every scroll event, check which element is on screen
 window.onscroll = function() {
     var chapterNames = Object.keys(chapters);
@@ -180,13 +335,73 @@ function isElementOnScreen(id) {
     var element = document.getElementById(id);
     var bounds = element.getBoundingClientRect();
 
-    console.log(bounds);
-    console.log(window.innerHeight);
-
-    bounds.top = bounds.top - 500;
-
     return bounds.top < window.innerHeight && bounds.bottom > 500;
 }
+
+
+map.on('load', function() {
+    map.loadImage('/assets/images/cardinal-logo.jpg', function(error, image) {
+        if (error) throw error;
+        map.addImage('cardinal', image);
+        map.addLayer({
+            "id": "points",
+            "type": "symbol",
+            "source": {
+              "type": "geojson",
+              "data": {
+                "type": "FeatureCollection",
+                "features":
+                [
+                  {
+                    "type": "Feature",
+                    "geometry":
+                    {
+                        "type": "Point",
+                        "coordinates": [0, 0]
+                    }
+                  },
+                  {
+                    "type": "Feature",
+                    "geometry":
+                    {
+                        "type": "Point",
+                        "coordinates": [40, 40]
+                    }
+                  },
+                  {
+                    "type": "Feature",
+                    "geometry":
+                    {
+                        "type": "Point",
+                        "coordinates": [50, 50]
+                    }
+                  },
+                  {
+                    "type": "Feature",
+                    "geometry":
+                    {
+                        "type": "Point",
+                        "coordinates": [60, 60]
+                    }
+                  },
+                  {
+                    "type": "Feature",
+                    "geometry":
+                    {
+                        "type": "Point",
+                        "coordinates": [60, 60]
+                    }
+                  },
+                ]
+              }
+            },
+            "layout": {
+                "icon-image": "cardinal",
+                "icon-size": 0.1
+            }
+        });
+    });
+});
 
 </script>
 
