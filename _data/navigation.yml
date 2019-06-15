@@ -1,8 +1,8 @@
-- name: Home
+- name: MAP
   link: /
-- name: About
+- name: ABOUT
   link: /about.html
-- name: Listings
+- name: LISTINGS
   link: /listings.html
-- name: Sample Lease
+- name: SAMPLE LEASE
   link: /assets/docs/lease2016.pdf

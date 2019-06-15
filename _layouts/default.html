@@ -17,7 +17,7 @@
 
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css' rel='stylesheet' />
-    <link href="https://fonts.googleapis.com/css?family=Raleway:900|Roboto:300,400,400i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text|family=Raleway:900|Roboto:300,400,400i&display=swap" rel="stylesheet">
     <style>
         body { margin:0; padding:0; }
         #map { position:absolute; top:0; bottom:0; width:100%; }
@@ -47,6 +47,23 @@
         border-bottom: 1px solid #ddd;
         opacity: 0.25;
         font-size: 1rem;
+    }
+    #features section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .house-details {
+      padding: 0 1rem;
+    }
+    .house-details h2 {
+      padding: 0;
+      margin: 0;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: .25rem;
+    }
+    .house-details small {
+      color: #aaa;
+      font-weight: 300;
     }
     section.active {
         opacity: 1;
@@ -153,6 +170,11 @@
     .footer {
       width: 50%;
       margin-right: 50%;
+      background: #A50101;
+      color: #fff;
+    }
+    .footer .active {
+      margin-bottom: 0;
     }
     footer p:nth-of-type(2){
       padding: 5rem 0 0 0;
@@ -162,6 +184,7 @@
       font-weight: 900;
       font-size: 17px;
       letter-spacing: .1rem;
+      color: #000;
     }
     footer img {
       height: 17px;
@@ -170,6 +193,7 @@
     }
     .apartments-list {
       font-size: 1rem;
+      font-family: 'Crimson Text', serif;
       margin: 0;
       padding: 0;
     }
@@ -192,9 +216,13 @@
     <h2>APARTMENTS</h2>
   </div>
   <ul class="primary-nav">
-    <li><a href="">ABOUT</a></li>
-    <li><a href="#">LISTINGS</a></li>
-    <li><a href="">SAMPLE LEASE</a></li>
+      {% for item in site.data.navigation %}
+      <li>
+          <a href="{{ item.link }}" {% if page.url == item.link %} class="current" {% endif %}>
+              {{ item.name }}
+          </a>
+      </li>
+      {% endfor %}
   </ul>
   <ul class="secondary-nav">
     <li><a href="tel:+15185784023"><span>SHOWINGS:</span> (518) 578-4023</a></li>
@@ -214,42 +242,68 @@
       {% assign 9799brink = site.houses | where: "house", "9799brink" %}
 
       {% for house_a in 72broad %}
-        <h2>{{ house_a.address }}</h2>
-        <img class="res-img" src="{{ house_a.image | prepend: site.baseurl }}" alt="{{ house_a.address }}" title="{{ post.address }}">
-        <p>{{ house_a.excerpt }}</p>
-        {% include apartments.html type=house_a.house %}
+        <div>
+          <img class="res-img" src="{{ house_a.image | prepend: site.baseurl }}" alt="{{ house_a.address }}" title="{{ post.address }}">
+        </div>
+        <div class="house-details">
+          <h2>{{ house_a.address }}</h2>
+          <small>2.2 miles from SUNY Plattsburgh</small>
+          <p>{{ house_a.excerpt }}</p>
+          {% include apartments.html type=house_a.house %}
+        </div>
       {% endfor %}
     </section>
     <section id='101103brink'>
       {% for house_b in 101103brink %}
-        <h2>{{ house_b.address }}</h2>
-        <img class="res-img" src="{{ house_b.image | prepend: site.baseurl }}" alt="{{ house_b.address }}" title="{{ post.address }}">
-        <p>{{ house_b.excerpt }}</p>
-        {% include apartments.html type=house_b.house %}
+        <div>
+          <img class="res-img" src="{{ house_b.image | prepend: site.baseurl }}" alt="{{ house_b.address }}" title="{{ post.address }}">
+        </div>
+        <div class="house-details">
+          <h2>{{ house_b.address }}</h2>
+          <small>2.2 miles to SUNY Plattsburgh</small>
+          <p>{{ house_b.excerpt }}</p>
+          {% include apartments.html type=house_b.house %}
+        </div>
+
       {% endfor %}
     </section>
     <section id='9799brink'>
       {% for house_c in 9799brink %}
-        <h2>{{ house_c.address }}</h2>
-        <img class="res-img" src="{{ house_c.image | prepend: site.baseurl }}" alt="{{ house_c.address }}" title="{{ post.address }}">
-        <p>{{ house_c.excerpt }}</p>
-        {% include apartments.html type=house_c.house %}
+        <div>
+          <img class="res-img" src="{{ house_c.image | prepend: site.baseurl }}" alt="{{ house_c.address }}" title="{{ post.address }}">
+        </div>
+        <div class="house-details">
+          <h2>{{ house_c.address }}</h2>
+          <small>2.2 miles from SUNY Plattsburgh</small>
+          <p>{{ house_c.excerpt }}</p>
+          {% include apartments.html type=house_c.house %}
+        </div>
       {% endfor %}
     </section>
     <section id='5broad'>
       {% for house_d in 5broad %}
-        <h2>{{ house_d.address }}</h2>
+      <div>
         <img class="res-img" src="{{ house_d.image | prepend: site.baseurl }}" alt="{{ house_d.address }}" title="{{ post.address }}">
+      </div>
+      <div class="house-details">
+        <h2>{{ house_d.address }}</h2>
+        <small>2.2 miles from SUNY Plattsburgh</small>
         <p>{{ house_d.excerpt }}</p>
         {% include apartments.html type=house_d.house %}
+      </div>
       {% endfor %}
     </section>
     <section id='21wells'>
       {% for house_e in 21wells %}
-        <h2>{{ house_e.address }}</h2>
+      <div>
         <img class="res-img" src="{{ house_e.image | prepend: site.baseurl }}" alt="{{ house_e.address }}" title="{{ post.address }}">
+      </div>
+      <div class="house-details">
+        <h2>{{ house_e.address }}</h2>
+        <small>2.2 miles from SUNY Plattsburgh</small>
         <p>{{ house_e.excerpt }}</p>
         {% include apartments.html type=house_e.house %}
+      </div>
       {% endfor %}
     </section>
 </div>
@@ -258,8 +312,8 @@
     <footer>
         <h2>SHOWINGS</h2>
         <p>Contact leasing agent Andrew Castine to see an apartment.</p>
-        <img src="/assets/images/phone.png" alt="phone icon"><a href="tel:+15185784023">PHONE: (518) 578-4023</a><br>
-        <img src="/assets/images/email.png" alt="email icon"><a href="mailto:castineproperties@gmail.com">EMAIL: castineproperties@gmail.com</a>
+        <a href="tel:+15185784023">PHONE: (518) 578-4023</a><br>
+        <a href="mailto:castineproperties@gmail.com">EMAIL: castineproperties@gmail.com</a>
 
         <p>
           LYON I LLC<br>
@@ -279,44 +333,36 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiY2Fzc2lkeWIiLCJhIjoiY2p3dmMzMGRsMDZobzN6bGYxM
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11',
-    center: [-0.15591514, 51.51830379],
-    zoom: 15.5,
-    bearing: 27,
-    pitch: 45
+    center: [-73.459623, 44.694766],
+    zoom: 15,
+    pitch: 0
 });
 
 var chapters = {
     '72broad': {
-        bearing: 27,
-        center: [-0.15591514, 51.51830379],
-        zoom: 15.5,
-        pitch: 20
+        center: [-73.462623, 44.694766],
+        zoom: 15,
+        pitch: 0
     },
     '101103brink': {
-        duration: 6000,
-        center: [-0.07571203, 51.51424049],
-        bearing: 150,
+        center: [-73.461513, 44.696262],
         zoom: 15,
         pitch: 0
     },
     '9799brink': {
-        bearing: 90,
-        center: [-0.08533793, 51.50438536],
-        zoom: 13,
-        speed: 0.6,
-        pitch: 40
+        center: [-73.461719, 44.696260],
+        zoom: 19,
+        pitch: 0
     },
     '5broad': {
-        bearing: 90,
-        center: [0.05991101, 51.48752939],
-        zoom: 12.3
+        center: [-73.452812, 44.695128],
+        zoom: 15,
+        pitch: 0
     },
     '21wells': {
-        bearing: 45,
-        center: [-0.18335806, 51.49439521],
-        zoom: 15.3,
-        pitch: 20,
-        speed: 0.5
+        center: [-73.464506, 44.698351],
+        zoom: 15,
+        pitch: 0
     }
 };
 
@@ -355,7 +401,7 @@ function isElementOnScreen(id) {
 
 
 map.on('load', function() {
-    map.loadImage('/assets/images/cardinal-logo.jpg', function(error, image) {
+    map.loadImage('/assets/images/cardinal-logo.png', function(error, image) {
         if (error) throw error;
         map.addImage('cardinal', image);
         map.addLayer({
@@ -372,7 +418,7 @@ map.on('load', function() {
                     "geometry":
                     {
                         "type": "Point",
-                        "coordinates": [0, 0]
+                        "coordinates": [-73.462623, 44.694766]
                     }
                   },
                   {
@@ -380,7 +426,7 @@ map.on('load', function() {
                     "geometry":
                     {
                         "type": "Point",
-                        "coordinates": [40, 40]
+                        "coordinates": [-73.452812, 44.695128]
                     }
                   },
                   {
@@ -388,7 +434,7 @@ map.on('load', function() {
                     "geometry":
                     {
                         "type": "Point",
-                        "coordinates": [50, 50]
+                        "coordinates": [-73.461719, 44.696260]
                     }
                   },
                   {
@@ -396,7 +442,7 @@ map.on('load', function() {
                     "geometry":
                     {
                         "type": "Point",
-                        "coordinates": [60, 60]
+                        "coordinates": [-73.461513, 44.696262]
                     }
                   },
                   {
@@ -404,7 +450,7 @@ map.on('load', function() {
                     "geometry":
                     {
                         "type": "Point",
-                        "coordinates": [60, 60]
+                        "coordinates": [-73.464506, 44.698351]
                     }
                   },
                 ]
@@ -412,7 +458,7 @@ map.on('load', function() {
             },
             "layout": {
                 "icon-image": "cardinal",
-                "icon-size": 0.1
+                "icon-size": 0.2
             }
         });
     });
