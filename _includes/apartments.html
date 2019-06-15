@@ -1,5 +1,5 @@
 
-<ul class="apartments">
+<ul class="apartments-list">
     {% for apartment in site.apartments %}
         {% if apartment.house == include.type %}
         <li><a href="{{ apartment.url }}">{{ apartment.rooms }} - {{ apartment.address }}</a></li>

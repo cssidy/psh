@@ -3,9 +3,12 @@ layout: house
 address: 72 Broad Street
 house: 72broad
 image: /assets/images/72broad/exterior.jpg
+excerpt_separator: <!--more-->
 ---
 A banana is an edible fruit – botanically a berry – produced by several kinds
 of large herbaceous flowering plants in the genus Musa.
+
+<!--more-->
 
 In some countries, bananas used for cooking may be called "plantains",
 distinguishing them from dessert bananas. The fruit is variable in size, color,
