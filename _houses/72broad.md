@@ -5,8 +5,8 @@ house: 72broad
 image: /assets/images/72broad/exterior.jpg
 excerpt_separator: <!--more-->
 ---
-A banana is an edible fruit – botanically a berry – produced by several kinds
-of large herbaceous flowering plants in the genus Musa.
+
+Steps away from campus. Large house with five sunny units, many of them one bedroom and with hardwood floors. Ample off-street parking behind the building.
 
 <!--more-->
 

@@ -1,17 +1,15 @@
 ---
-layout: default
+layout: inner
 title: Listings
 ---
 
 
-<section class="column-spacer">
+<section class="listings">
     <h2>Complete Apartment List</h2>
     {% for house in site.houses %}
-        <div class="row row-spacer">
-            <div class="column">
-                {% include listings.html type=house.house %}
-            </div>
-        </div>
-
+      <div>
+        {% include listings.html type=house.house %}
+      </div>
+      <br>
     {% endfor %}
 </section>

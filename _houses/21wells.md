@@ -5,8 +5,7 @@ house: 21wells
 image: /assets/images/21wells/exterior.jpg
 excerpt_separator: <!--more-->
 ---
-A banana is an edible fruit – botanically a berry – produced by several kinds
-of large herbaceous flowering plants in the genus Musa.
+Enjoy the ease and independence of fully furnished units. Washing machines and dryers in the basement. Ample off-street parking behind building. Very short walk to campus Hawkins Pond.
 
 <!--more-->
 

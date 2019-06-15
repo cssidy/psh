@@ -5,8 +5,8 @@ house: 5broad
 image: /assets/images/5broad/exterior.jpg
 excerpt_separator: <!--more-->
 ---
-A banana is an edible fruit – botanically a berry – produced by several kinds
-of large herbaceous flowering plants in the genus Musa.
+
+Live in the middle of downtown. 10 minute walk to campus. Large units with porches. Off-street parking.
 
 <!--more-->
 

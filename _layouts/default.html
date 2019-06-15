@@ -11,7 +11,7 @@
     <meta property="og:image" content="/assets/images/72broad/exterior.jpg" />
     <meta property="og:title" content="Plattsburgh Student Housing" />
     <meta property="og:description" content="Affordable college apartments near SUNY Plattsburgh, New York" />
-
+    <link rel="icon" href="/assets/images/cardinal-logo.png" type="image/x-icon">
 
 
 
@@ -216,13 +216,7 @@
     <h2>APARTMENTS</h2>
   </div>
   <ul class="primary-nav">
-      {% for item in site.data.navigation %}
-      <li>
-          <a href="{{ item.link }}" {% if page.url == item.link %} class="current" {% endif %}>
-              {{ item.name }}
-          </a>
-      </li>
-      {% endfor %}
+      {% include navigation.html %}
   </ul>
   <ul class="secondary-nav">
     <li><a href="tel:+15185784023"><span>SHOWINGS:</span> (518) 578-4023</a></li>
@@ -247,7 +241,7 @@
         </div>
         <div class="house-details">
           <h2>{{ house_a.address }}</h2>
-          <small>2.2 miles from SUNY Plattsburgh</small>
+          <small>236 feet from SUNY Plattsburgh</small>
           <p>{{ house_a.excerpt }}</p>
           {% include apartments.html type=house_a.house %}
         </div>
@@ -260,7 +254,7 @@
         </div>
         <div class="house-details">
           <h2>{{ house_b.address }}</h2>
-          <small>2.2 miles to SUNY Plattsburgh</small>
+          <small>0.4 miles to SUNY Plattsburgh</small>
           <p>{{ house_b.excerpt }}</p>
           {% include apartments.html type=house_b.house %}
         </div>
@@ -274,7 +268,7 @@
         </div>
         <div class="house-details">
           <h2>{{ house_c.address }}</h2>
-          <small>2.2 miles from SUNY Plattsburgh</small>
+          <small>0.4 miles from SUNY Plattsburgh</small>
           <p>{{ house_c.excerpt }}</p>
           {% include apartments.html type=house_c.house %}
         </div>
@@ -287,7 +281,7 @@
       </div>
       <div class="house-details">
         <h2>{{ house_d.address }}</h2>
-        <small>2.2 miles from SUNY Plattsburgh</small>
+        <small>0.5 miles from SUNY Plattsburgh</small>
         <p>{{ house_d.excerpt }}</p>
         {% include apartments.html type=house_d.house %}
       </div>
@@ -300,7 +294,7 @@
       </div>
       <div class="house-details">
         <h2>{{ house_e.address }}</h2>
-        <small>2.2 miles from SUNY Plattsburgh</small>
+        <small>0.1 miles from SUNY Plattsburgh</small>
         <p>{{ house_e.excerpt }}</p>
         {% include apartments.html type=house_e.house %}
       </div>

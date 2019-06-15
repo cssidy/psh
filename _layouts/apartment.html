@@ -1,64 +1,62 @@
 ---
-layout: default
+layout: inner
 ---
 
 
 
-
-
-
-<div class="row">
-    <div class="column column-spacer">
+<section class="apartment-details">
+    <div>
         <h2>{{ page.address }}</h2>
 
         {{ content }}
 
-        <p>Lease: Start of fall semester until end of spring semester</p>
-        <p>Maximum tenants: {{ page.max_tenants }}</p>
-        <p>Rent: {{ page.rent }} per semester</p>
-        <p>Security deposit: {{ page.security_deposit }}</p>
-        <p>Security deposit with pets: {{ page.security_deposit_pets }}</p>
-        <p>Parking spaces: {{ page.parking_spaces }}</p>
-        <p>Furnished: {{ page.furnished | capitalize }}</p>
+        <p><span class="heavy-font">Lease:</span> Start of fall semester until end of spring semester</p>
+        <p><span class="heavy-font">Maximum tenants:</span>  {{ page.max_tenants }}</p>
+        <p><span class="heavy-font">Rent:</span>  {{ page.rent }} per semester</p>
+        <p><span class="heavy-font">Security deposit:</span>  {{ page.security_deposit }}</p>
+        <p><span class="heavy-font">Pet deposit:</span>  {{ page.security_deposit_pets }}</p>
+        <p><span class="heavy-font">Parking spaces:</span>  {{ page.parking_spaces }}</p>
+        <p><span class="heavy-font">Furnished:</span>  {{ page.furnished | capitalize }}</p>
+
+        {% capture filename %}images/floorplans/{{ page.apartment }}{% endcapture %}
+
+        <br>
+        <br>
+        <br>
+
+        <h2>Floorplans</h2>
+        <p>Click to view larger</p>
+
+        {% for image in site.static_files %}
+            {% if image.path contains filename %}
+                <a href="{{ site.baseurl }}{{ image.path }}">
+                  <img class="res-img" src="{{ site.baseurl }}{{ image.path }}" alt="Plattsburgh Student Housing Lyon I LLC Off-Campus College Apartments" />
+                </a>
+            {% endif %}
+        {% endfor %}
     </div>
-    <div class="column column-spacer">
-        <div class="floorplan-gallery">
-            {% capture filename %}images/floorplans/{{ page.apartment }}{% endcapture %}
+    <div class="image-gallery">
+      {% capture filename %}images/{{ page.house }}/{{ page.apartment }}{% endcapture %}
 
+      {% for image in site.static_files %}
+          {% if image.path contains filename %}
+          <img src="{{ site.baseurl }}{{ image.path }}" alt="{{ page.address }}" />
+          {% endif %}
+      {% endfor %}
 
-            <h2>Floorplans</h2>
-            <p>Click to view larger</p>
+      {% capture filename %}images/{{ page.house }}/house{% endcapture %}
 
-            {% for image in site.static_files %}
-                {% if image.path contains filename %}
+      {% for image in site.static_files %}
+          {% if image.path contains filename %}
 
-                    <a href="{{ site.baseurl }}{{ image.path }}"><img src="{{ site.baseurl }}{{ image.path }}" alt="Plattsburgh Student Housing Lyon I LLC Off-Campus College Apartments" /></a>
-                {% endif %}
-            {% endfor %}
-        </div>
+          <img src="{{ site.baseurl }}{{ image.path }}" alt="{{ page.address }}" />
+          {% endif %}
+      {% endfor %}
     </div>
-</div>
-
-
-
-<section class="image-gallery">
-    {% capture filename %}images/{{ page.house }}/{{ page.apartment }}{% endcapture %}
-
-    {% for image in site.static_files %}
-        {% if image.path contains filename %}
-        <img src="{{ site.baseurl }}{{ image.path }}" alt="{{ page.address }}" />
-        {% endif %}
-    {% endfor %}
-
-    {% capture filename %}images/{{ page.house }}/house{% endcapture %}
-
-    {% for image in site.static_files %}
-        {% if image.path contains filename %}
-
-        <img src="{{ site.baseurl }}{{ image.path }}" alt="{{ page.address }}" />
-        {% endif %}
-    {% endfor %}
 </section>
 
 
 
+<section>
+
+</section>
