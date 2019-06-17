@@ -6,7 +6,7 @@ image: /assets/images/72broad/exterior.jpg
 excerpt_separator: <!--more-->
 ---
 
-Steps away from campus. Large house with five sunny units, many of them one bedroom and with hardwood floors. Ample off-street parking behind the building.
+Very close proximity to campus. Large house with five sunny units, many of them one bedroom and with hardwood floors. Ample off-street parking behind the building.
 
 <!--more-->
 

@@ -5,7 +5,7 @@ house: 21wells
 image: /assets/images/21wells/exterior.jpg
 excerpt_separator: <!--more-->
 ---
-Enjoy the ease and independence of fully furnished units. Washing machines and dryers in the basement. Ample off-street parking behind building. Very short walk to campus Hawkins Pond.
+Enjoy the ease and independence of fully furnished units. Washing machines and dryers in the basement. Ample off-street parking behind building. Very close proximity to campus Hawkins Pond.
 
 <!--more-->
 

@@ -6,7 +6,7 @@ image: /assets/images/5broad/exterior.jpg
 excerpt_separator: <!--more-->
 ---
 
-Live in the middle of downtown. 10 minute walk to campus. Large units with porches. Off-street parking.
+Live in the middle of downtown. Large units with porches. Off-street parking.
 
 <!--more-->
 
