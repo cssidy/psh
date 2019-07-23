@@ -232,6 +232,9 @@ footer a {
   .logo h1 {
     text-align: center;
   }
+  .apartment-details {
+    display: block;
+  }
 }
 
 @media(min-width: 600px) {
