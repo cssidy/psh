@@ -105,13 +105,14 @@
       height: auto;
     }
     .logo {
+      background-image: url("assets/images/bright-squares.png");
       background-color: #A50101;
-      height: 100px;
-      width: 200px;
       margin-top: -1rem;
       z-index: 11;
       order: 1;
       color: #fff;
+      height: 100px;
+      width: 240px;
     }
     .logo h1 {
       margin: 0;
@@ -170,7 +171,8 @@
     .footer {
       width: 50%;
       margin-right: 50%;
-      background: #A50101;
+      background-image: url("assets/images/bright-squares.png");
+      background-color: #A50101;
       color: #fff;
     }
     .footer .active {
@@ -184,7 +186,7 @@
       font-weight: 900;
       font-size: 17px;
       letter-spacing: .1rem;
-      color: #000;
+      color: #fff;
     }
     footer img {
       height: 17px;
@@ -208,13 +210,21 @@
     .apartments-list a:hover {
       color: #6A0101;
     }
+
+    @media(min-width: 600px) {
+      #map {
+        display: none;
+      }
+    }
 </style>
 
 <nav>
-  <div class="logo">
-    <h1>LYON</h1>
-    <h2>APARTMENTS</h2>
-  </div>
+  <a href="/">
+    <div class="logo">
+      <h1>LYON I</h1>
+      <h2>APARTMENTS</h2>
+    </div>
+  </a>
   <ul class="primary-nav">
       {% include navigation.html %}
   </ul>
@@ -254,7 +264,7 @@
         </div>
         <div class="house-details">
           <h2>{{ house_b.address }}</h2>
-          <small>0.4 miles to SUNY Plattsburgh</small>
+          <small>0.2 miles to SUNY Plattsburgh</small>
           <p>{{ house_b.excerpt }}</p>
           {% include apartments.html type=house_b.house %}
         </div>
@@ -268,7 +278,7 @@
         </div>
         <div class="house-details">
           <h2>{{ house_c.address }}</h2>
-          <small>0.4 miles from SUNY Plattsburgh</small>
+          <small>0.2 miles from SUNY Plattsburgh</small>
           <p>{{ house_c.excerpt }}</p>
           {% include apartments.html type=house_c.house %}
         </div>

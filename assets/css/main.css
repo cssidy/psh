@@ -61,13 +61,14 @@ nav ul li {
   height: auto;
 }
 .logo {
+  background-image: url("../images/bright-squares.png");
   background-color: #A50101;
-  height: 100px;
-  width: 200px;
   margin-top: -1rem;
   z-index: 11;
   order: 1;
   color: #fff;
+  height: 100px;
+  width: 240px;
 }
 .logo h1 {
   margin: 0;
@@ -105,13 +106,13 @@ nav ul li {
   order: 3;
   align-items: flex-end;
   text-align: right;
-  padding: 0 1rem;
+
 }
 .secondary-nav li {
   font-weight: 300;
   background: #A50101;
   height: 33px;
-  padding: 1.1rem 1rem .25rem 1rem;
+  padding: 1.6rem 2rem .25rem 1rem;
   margin-top: -1.5rem;
 }
 .secondary-nav li a {
@@ -126,8 +127,8 @@ nav ul li {
 .footer {
   width: 50%;
   margin-right: 50%;
-  background: #A50101;
   color: #fff;
+  font-weight: 900;
 }
 .footer .active {
   margin-bottom: 0;
@@ -140,16 +141,17 @@ footer a {
   font-weight: 900;
   font-size: 17px;
   letter-spacing: .1rem;
-  color: #000;
-}
-footer img {
-  height: 17px;
-  width: 17px;
-  margin: 10px 10px 0 0;
 }
 .inner-footer {
   text-align: center;
-  padding-top: 5rem;
+  padding: 1rem;
+  width: 100%;
+  color: #fff;
+  background-image: url("../images/bright-squares.png");
+  background-color: #A50101;
+}
+.inner-footer a {
+  color: #fff;
 }
 .apartments-list {
   font-size: 1rem;
@@ -175,6 +177,9 @@ footer img {
 .apartment-details div, .about-us, .listings {
   padding: 75px 25px 0 25px;
 }
+.about-us {
+  padding-bottom: 5rem;
+}
 .image-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -199,4 +204,10 @@ footer img {
   height: 100%;
   width: 300px;
 
+}
+
+@media(min-width: 600px) {
+  .about-us, .listings {
+    margin: 0 15%;
+  }
 }
