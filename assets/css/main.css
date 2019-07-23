@@ -206,6 +206,34 @@ footer a {
 
 }
 
+@media(max-width: 600px) {
+  nav {
+    flex-wrap: nowrap;
+    height: 350px;
+    padding: 0;
+  }
+  nav ul li {
+    display: block;
+    text-align: center;
+    padding: 1rem;
+  }
+  nav ul.secondary-nav {
+    align-items: baseline;
+    padding: 0 1rem;
+  }
+  .secondary-nav li {
+    margin-top: 1rem;
+    padding: 1.1rem 2rem .25rem 1rem;
+  }
+  .logo {
+    width:auto;
+    padding-top: 1rem;
+  }
+  .logo h1 {
+    text-align: center;
+  }
+}
+
 @media(min-width: 600px) {
   .about-us, .listings {
     margin: 0 15%;
