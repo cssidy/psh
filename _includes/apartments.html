@@ -2,7 +2,14 @@
 <ul class="apartments-list">
     {% for apartment in site.apartments %}
         {% if apartment.house == include.type %}
-        <li><a href="{{ apartment.url }}">{{ apartment.rooms }} - {{ apartment.address }}</a></li>
+        <li><a href="{{ apartment.url }}">
+          {% if apartment.furnished == true %}
+            <span title="Furnished apartment" style="line-height:1rem;vertical-align: middle;">
+              <img style="height:1rem;width:1rem;" src="/assets/images/sofa.png" alt="Furnished apartment icon">
+            </span>
+          {% endif %}
+          {{ apartment.rooms }} - {{ apartment.address }}
+        </a></li>
         {% endif %}
     {% endfor %}
 </ul>
