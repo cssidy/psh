@@ -16,6 +16,239 @@
         <link rel="stylesheet" href="/assets/css/main.css">
         <link href='https://fonts.googleapis.com/css?family=Crimson+Text' rel='stylesheet' type='text/css'>
         <link rel="icon" href="/assets/images/cardinal-logo.jpg" type="image/x-icon">
+        
+        <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    #map {
+        position: fixed;
+        width:50%;
+        right: 0;
+    }
+    #features {
+        width: 50%;
+        margin-right: 50%;
+        font-family: sans-serif;
+        overflow-y: scroll;
+        background-color: #fafafa;
+    }
+    section {
+        padding:  75px 25px;
+        line-height: 25px;
+        border-bottom: 1px solid #ddd;
+        opacity: 0.25;
+        font-size: 1rem;
+    }
+    #features section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .house-details {
+      padding: 0 1rem;
+    }
+    .house-details h2 {
+      padding: 0;
+      margin: 0;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: .25rem;
+    }
+    .house-details small {
+      color: #aaa;
+      font-weight: 300;
+    }
+    section.active {
+        opacity: 1;
+    }
+    section:last-child {
+        border-bottom: none;
+        margin-bottom: 50px;
+    }
+    h1, h2, h3 {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 900;
+      letter-spacing: .1rem;
+    }
+    a {
+      color: #A50101;
+      text-decoration: none;
+    }
+    nav {
+      height: 35px;
+      position: relative;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      width: 100%;
+      z-index: 10;
+      display: flex;
+      padding: 1rem 0 .06rem 1rem;
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+    nav ul {
+      margin: 0;
+    }
+    nav ul li {
+      display: inline-block;
+      padding: 0 1rem;
+    }
+    .res-img {
+      width: 100%;
+      height: auto;
+    }
+    .logo {
+      background-image: url("assets/images/bright-squares.png");
+      background-color: #A50101;
+      margin-top: -1rem;
+      z-index: 11;
+      order: 1;
+      color: #fff;
+      height: 100px;
+      width: 280px;
+    }
+    .logo h1 {
+      margin: 0;
+      font-size: 3.75rem;
+      letter-spacing: .25rem;
+      padding: .5rem .5rem 0 .75rem;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 900;
+      line-height: 3.75rem;
+    }
+    .logo h2 {
+      margin: 0;
+      font-size: 1.1rem;
+      padding: 0 0 .5rem 0;
+      line-height: 1.1rem;
+      font-weight: 300;
+      text-align: center;
+    }
+    .primary-nav {
+      order: 2;
+      padding: 0 0 0 1rem;
+    }
+    .primary-nav li a {
+      text-decoration: none;
+      color: #A50101;
+      font-weight: 400;
+      font-size: .875rem;
+    }
+    .primary-nav li a:hover {
+      border-bottom: 2px solid #A50101;
+      padding-bottom: 1rem;
+      color: #6A0101;
+    }
+    .secondary-nav {
+      order: 3;
+      align-items: flex-end;
+      text-align: right;
+      padding: 0 1rem;
+    }
+    .secondary-nav li {
+      font-weight: 300;
+      background: #A50101;
+      height: 2.0625rem;
+      padding: 1.1rem 1rem .25rem 1rem;
+      margin-top: -1.5rem;
+    }
+    .secondary-nav li a {
+      text-decoration: none;
+      color: #fff;
+    }
+    .secondary-nav li span {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 900;
+      letter-spacing: .1rem;
+    }
+    .footer {
+      width: 50%;
+      margin-right: 50%;
+      background-image: url("assets/images/bright-squares.png");
+      background-color: #A50101;
+      color: #fff;
+    }
+    .footer .active {
+      margin-bottom: 0;
+    }
+    footer p:nth-of-type(2){
+      padding: 5rem 0 0 0;
+    }
+    footer a {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 900;
+      font-size: 17px;
+      letter-spacing: .1rem;
+      color: #fff;
+    }
+    footer img {
+      height: 17px;
+      width: 17px;
+      margin: 10px 10px 0 0;
+    }
+    .apartments-list {
+      font-size: 1rem;
+      font-family: 'Crimson Text', serif;
+      margin: 0;
+      padding: 0;
+    }
+    .apartments-list li {
+      list-style: none;
+      border-bottom: 1px solid #F2F0EC;
+      padding: .25em;
+    }
+    .apartments-list li:nth-last-of-type(1) {
+      border-bottom: none;
+    }
+    .apartments-list a:hover {
+      color: #6A0101;
+    }
+
+    @media(max-width: 600px) {
+      #map {
+        position: absolute;
+        width: 100%;
+        height: 350px;
+        margin-top: 350px;
+      }
+      #features {
+        margin-top: 350px;
+      }
+      #features, .footer {
+        width: 100%;
+        margin-right: 0;
+      }
+      #features section {
+        display: block;
+      }
+      .house-details {
+        padding: 1rem;
+      }
+      nav {
+        flex-wrap: nowrap;
+        height: 350px;
+        padding: 0;
+      }
+      nav ul li {
+        display: block;
+        text-align: center;
+        padding: 1rem;
+      }
+      nav ul.secondary-nav {
+        align-items: baseline;
+      }
+      .secondary-nav li {
+        margin-top: 1rem;
+      }
+      .logo {
+        width:auto;
+        padding-top: 1rem;
+      }
+      .logo h1 {
+        text-align: center;
+      }
+    }
+</style>
+
     </head>
     <body>
           <nav>
