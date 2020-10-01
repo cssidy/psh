@@ -13,8 +13,6 @@
     <meta property="og:description" content="Affordable college apartments near SUNY Plattsburgh, New York" />
     <link rel="icon" href="/assets/images/cardinal-logo.png" type="image/x-icon">
 
-
-
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.0.0/mapbox-gl.css' rel='stylesheet' />
     <link href="https://fonts.googleapis.com/css?family=Crimson+Text|family=Raleway:900|Roboto:300,400,400i&display=swap" rel="stylesheet">
@@ -380,7 +378,7 @@ var map = new mapboxgl.Map({
     pitch: 0
 });
 
-var chapters = {
+var houses = {
     '72broad': {
         center: [-73.462623, 44.694766],
         zoom: 15,
@@ -410,26 +408,26 @@ var chapters = {
 
 // On every scroll event, check which element is on screen
 window.onscroll = function() {
-    var chapterNames = Object.keys(chapters);
-    for (var i = 0; i < chapterNames.length; i++) {
-        var chapterName = chapterNames[i];
-        if (isElementOnScreen(chapterName)) {
-            setActiveChapter(chapterName);
+    var houseNames = Object.keys(houses);
+    for (var i = 0; i < houseNames.length; i++) {
+        var houseName = houseNames[i];
+        if (isElementOnScreen(houseName)) {
+            setActiveHouse(houseName);
             break;
         }
     }
 };
 
-var activeChapterName = '72broad';
-function setActiveChapter(chapterName) {
-    if (chapterName === activeChapterName) return;
+var activeHouseName = '72broad';
+function setActiveHouse(houseName) {
+    if (houseName === activeHouseName) return;
 
-    map.flyTo(chapters[chapterName]);
+    map.flyTo(houses[houseName]);
 
-    document.getElementById(chapterName).setAttribute('class', 'active');
-    document.getElementById(activeChapterName).setAttribute('class', '');
+    document.getElementById(houseName).setAttribute('class', 'active');
+    document.getElementById(activeHouseName).setAttribute('class', '');
 
-    activeChapterName = chapterName;
+    activeHouseName = houseName;
 }
 
 function isElementOnScreen(id) {
