@@ -409,7 +409,7 @@ var houses = {
     }
 };
 
-// On every scroll event, check which element is on screen
+// On every scroll event, check which house is in view and make it 'active'
 window.onscroll = function() {
     var houseNames = Object.keys(houses);
     for (var i = 0; i < houseNames.length; i++) {
@@ -421,6 +421,7 @@ window.onscroll = function() {
     }
 };
 
+// determine what house is 'active' and give it classes, then zoom in on it
 var activeHouseName = '72broad';
 function setActiveHouse(houseName) {
     if (houseName === activeHouseName) return;
@@ -433,6 +434,7 @@ function setActiveHouse(houseName) {
     activeHouseName = houseName;
 }
 
+// the user has scrolled to within bounds of the house
 function isElementOnScreen(id) {
     var element = document.getElementById(id);
     var bounds = element.getBoundingClientRect();
@@ -440,7 +442,7 @@ function isElementOnScreen(id) {
     return bounds.top < window.innerHeight && bounds.bottom > 500;
 }
 
-
+// put cardinal icon as a marker for each house
 map.on('load', function() {
     map.loadImage('/assets/images/cardinal-logo.png', function(error, image) {
         if (error) throw error;
