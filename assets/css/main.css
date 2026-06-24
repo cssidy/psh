@@ -174,7 +174,10 @@ footer a {
   display: grid;
   grid-template-columns: 40% 1fr;
 }
-.apartment-details div, .about-us, .listings {
+.about-us, .listings {
+  padding: 75px 25px 0 25px;
+}
+.apartment-details div {
   padding: 25px 25px 0 25px;
 }
 .about-us {
