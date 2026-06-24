@@ -175,7 +175,7 @@ footer a {
   grid-template-columns: 40% 1fr;
 }
 .apartment-details div, .about-us, .listings {
-  padding: 75px 25px 0 25px;
+  padding: 25px 25px 0 25px;
 }
 .about-us {
   padding-bottom: 5rem;
